@@ -2,3 +2,6 @@ venv
 backup.py
 test.py
 venvpyinstaller
+build
+dist
+main.spec
