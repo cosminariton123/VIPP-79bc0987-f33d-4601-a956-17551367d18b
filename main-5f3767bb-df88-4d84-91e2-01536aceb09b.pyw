@@ -3,7 +3,6 @@ import time
 import sys
 import getpass
 import os
-import numpy as np
 import atexit
 import signal
 import pyautogui
@@ -44,9 +43,10 @@ def get_this_filename():
 
 
 USER_NAME = getpass.getuser()
-MIN_MINUTES = 10 * 60
-MAX_MINUTES = 30 * 60
+MIN_MINUTES = 0.1 * 60
+MAX_MINUTES = 0.2 * 60
 LOOP_CHECK_INTERVAL = 0.2
+COUNT_FOR_NORMAL_DIST = 100
 THIS_FILE_PATH = get_this_file_path()
 with open(THIS_FILE_PATH, "r") as f:
     THIS_FILE_CONTENT = f.read()
@@ -133,9 +133,9 @@ def play_sound():
 
 
 def normal_distribution(min, max):
-    standard_deviation = (max-min)/4
-    mean = np.mean([min, max])
-    return int(np.random.normal(mean, standard_deviation))
+    count = COUNT_FOR_NORMAL_DIST
+    values =  sum([random.randint(min, max) for x in range(count)])
+    return round(values/count)
 
 
 
