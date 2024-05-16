@@ -43,8 +43,8 @@ def get_this_filename():
 
 
 USER_NAME = getpass.getuser()
-MIN_MINUTES = 0.1 * 60
-MAX_MINUTES = 0.2 * 60
+MIN_MINUTES = 10 * 60
+MAX_MINUTES = 30 * 60
 LOOP_CHECK_INTERVAL = 0.2
 COUNT_FOR_NORMAL_DIST = 100
 THIS_FILE_PATH = get_this_file_path()
