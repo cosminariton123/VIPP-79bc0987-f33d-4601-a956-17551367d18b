@@ -89,7 +89,6 @@ def remove_from_startup(file_path=""):
 def handle_exit(*args, **kwargs):
     with open(THIS_FILE_PATH, "w") as f:
         f.write(THIS_FILE_CONTENT)
-    time.sleep(1)
     add_to_startup()
     sys.exit()
 
