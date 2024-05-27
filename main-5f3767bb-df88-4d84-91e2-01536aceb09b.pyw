@@ -44,7 +44,6 @@ USER_NAME = getpass.getuser()
 MIN_MINUTES = 10 * 60
 MAX_MINUTES = 30 * 60
 LOOP_CHECK_INTERVAL = 0.2
-COUNT_FOR_NORMAL_DIST = 100
 THIS_FILE_PATH = get_this_file_path()
 with open(THIS_FILE_PATH, "r") as f:
     THIS_FILE_CONTENT = f.read()
