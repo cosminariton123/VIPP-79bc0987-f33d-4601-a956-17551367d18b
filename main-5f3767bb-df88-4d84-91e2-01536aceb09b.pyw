@@ -137,7 +137,7 @@ def play_sound():
 def normal_distribution(min, max):
     standard_deviation = (max-min)/4
     mean = np.mean([min, max])
-    return int(np.random.normal(mean, standard_deviation))
+    return max(int(np.random.normal(mean, standard_deviation)), 1)
 
 
 
