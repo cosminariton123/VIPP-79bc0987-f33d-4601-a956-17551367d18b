@@ -41,8 +41,8 @@ def get_this_filename():
 
 
 USER_NAME = getpass.getuser()
-MIN_MINUTES = 0.1 * 60
-MAX_MINUTES = 0.3 * 60
+MIN_MINUTES = 5 * 60
+MAX_MINUTES = 15 * 60
 LOOP_CHECK_INTERVAL = 0.2
 THIS_FILE_PATH = get_this_file_path()
 with open(THIS_FILE_PATH, "r") as f:
